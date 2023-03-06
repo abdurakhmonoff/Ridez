@@ -1,3 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Ridez</string>
+    <string name="mapbox_public_access_token" tools:ignore="Typos">pk.eyJ1IjoiYWJkdXJha2htYW5vdiIsImEiOiJjbGV3cW85ZWkwamIyNDRvNHdxeDZzdjE0In0.EvrsaMrce_jRYbZMzsQcPg</string>
 </resources>

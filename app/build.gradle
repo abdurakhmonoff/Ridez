@@ -23,6 +23,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            buildConfigField "String", "MAPBOX_SECRET_ACCESS_TOKEN", "\"" + project.property("MAPBOX_SECRET_ACCESS_TOKEN") + "\""
+        }
+        release {
+            buildConfigField "String", "MAPBOX_SECRET_ACCESS_TOKEN", "\"" + project.property("MAPBOX_SECRET_ACCESS_TOKEN") + "\""
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -30,6 +36,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding = true
     }
 }
 
@@ -46,6 +55,9 @@ dependencies {
     // Hilt
     implementation "com.google.dagger:hilt-android:2.44.2"
     kapt "com.google.dagger:hilt-android-compiler:2.44.2"
+
+    // Mapbox Maps SDK
+    implementation 'com.mapbox.maps:android:10.11.1'
 }
 
 kapt {
