@@ -13,3 +13,12 @@
 .externalNativeBuild
 .cxx
 local.properties
+*.log
+output.json
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
+*.jks
+*.keystore
+google-services.json
+*.hprof
