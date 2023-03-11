@@ -7,4 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="white_85">#D9FFFFFF</color>
+    <color name="midnight_black">#2c3e50</color>
+    <color name="turbo_yellow">#f9ca24</color>
+    <color name="aqua_green">#01a3a4</color>
+    <color name="lynx_white">#f5f6fa</color>
+    <color name="valencia_red">#d63031</color>
+    <color name="exodus_blue">#686de0</color>
+    <color name="quince_orange">#f0932b</color>
 </resources>
