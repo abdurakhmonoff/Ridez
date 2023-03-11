@@ -4,14 +4,218 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
     tools:context=".ui.MainActivity">
 
-    <!--TODO: Include Mapbox wordmark on the map later-->
     <com.mapbox.maps.MapView xmlns:mapbox="http://schemas.android.com/apk/res-auto"
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        mapbox:mapbox_cameraTargetLat="40.7128"
-        mapbox:mapbox_cameraTargetLng="-74.0060"
-        mapbox:mapbox_cameraZoom="9.0" />
+        mapbox:mapbox_cameraTargetLat="41.31119"
+        mapbox:mapbox_cameraTargetLng="69.27957"
+        mapbox:mapbox_cameraZoom="15.0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <com.abdurakhmanov.ridez.ui.widgets.StatusButtonToggleGroup
+            android:id="@+id/btn_group_taxi_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:checkedButton="@id/btn_status_free"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_nav_drawer"
+            app:layout_constraintEnd_toStartOf="@+id/btn_notifications"
+            app:layout_constraintStart_toEndOf="@+id/btn_nav_drawer"
+            app:layout_constraintTop_toTopOf="@+id/btn_nav_drawer"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_status_free"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_medium"
+                android:insetTop="4dp"
+                android:insetBottom="4dp"
+                android:text="@string/button_free"
+                android:textAllCaps="false"
+                app:cornerRadius="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_status_busy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_medium"
+                android:insetTop="4dp"
+                android:insetBottom="4dp"
+                android:text="@string/button_busy"
+                android:textAllCaps="false"
+                app:cornerRadius="10dp" />
+        </com.abdurakhmanov.ridez.ui.widgets.StatusButtonToggleGroup>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_notifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/desc_notifications"
+            android:src="@drawable/ic_notifications_black_24"
+            app:backgroundTint="@color/white"
+            app:elevation="3dp"
+            app:fabSize="mini"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/midnight_black" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_nav_drawer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/desc_navigation_drawer"
+            android:src="@drawable/ic_nav_drawer_black_24"
+            app:backgroundTint="@color/white"
+            app:elevation="3dp"
+            app:fabSize="mini"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/midnight_black" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_boost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:contentDescription="@string/button_boost"
+            android:src="@drawable/ic_boost_black_24"
+            app:backgroundTint="@color/white"
+            app:elevation="3dp"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias=".55"
+            app:tint="@color/exodus_blue" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_zoom_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="@string/desc_zoom_in"
+            android:src="@drawable/ic_zoom_in_black_24"
+            app:backgroundTint="@color/white_85"
+            app:elevation="0dp"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toTopOf="@id/btn_zoom_out"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias=".7"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:tint="@color/midnight_black" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_zoom_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/desc_zoom_out"
+            android:src="@drawable/ic_zoom_out_black_24"
+            app:backgroundTint="@color/white_85"
+            app:elevation="0dp"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toTopOf="@id/btn_current_location"
+            app:layout_constraintEnd_toEndOf="@+id/btn_zoom_in"
+            app:layout_constraintTop_toBottomOf="@id/btn_zoom_in"
+            app:tint="@color/midnight_black" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_current_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/desc_current_location"
+            android:src="@drawable/ic_current_location_black_24"
+            app:backgroundTint="@color/white_85"
+            app:elevation="0dp"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btn_zoom_in"
+            app:layout_constraintTop_toBottomOf="@+id/btn_zoom_out"
+            app:tint="@color/midnight_black" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_orders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/button_orders"
+            android:src="@drawable/ic_orders_black_24"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_curb"
+            app:layout_constraintEnd_toStartOf="@id/btn_curb"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_curb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:contentDescription="@string/button_curb"
+            android:src="@drawable/ic_curb_black_24"
+            app:layout_constraintBottom_toTopOf="@id/btn_curb_text"
+            app:layout_constraintEnd_toStartOf="@+id/btn_tariffs"
+            app:layout_constraintStart_toEndOf="@+id/btn_orders" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_tariffs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/button_tariffs"
+            android:src="@drawable/ic_tariffs_black_24"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_curb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_curb" />
+
+        <TextView
+            android:id="@+id/btn_orders_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/lexend_medium"
+            android:text="@string/button_orders"
+            android:textColor="@color/midnight_black"
+            app:layout_constraintEnd_toEndOf="@+id/btn_orders"
+            app:layout_constraintStart_toStartOf="@+id/btn_orders"
+            app:layout_constraintTop_toBottomOf="@+id/btn_orders" />
+
+        <TextView
+            android:id="@+id/btn_curb_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/lexend_medium"
+            android:text="@string/button_curb"
+            android:textColor="@color/midnight_black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btn_curb"
+            app:layout_constraintStart_toStartOf="@+id/btn_curb" />
+
+        <TextView
+            android:id="@+id/btn_tariffs_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/lexend_medium"
+            android:text="@string/button_tariffs"
+            android:textColor="@color/midnight_black"
+            app:layout_constraintEnd_toEndOf="@+id/btn_tariffs"
+            app:layout_constraintStart_toStartOf="@+id/btn_tariffs"
+            app:layout_constraintTop_toBottomOf="@+id/btn_tariffs" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
