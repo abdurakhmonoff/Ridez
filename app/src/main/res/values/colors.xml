@@ -23,4 +23,10 @@
     <color name="btn_boost_bg_color">#ffffff</color>
     <color name="btn_live_location_bg_color">#ffffff</color>
     <color name="btn_main_label_color">#2c3e50</color>
+    <color name="btn_right_side_button_bg">#D9FFFFFF</color>
+    <color name="btn_right_side_button_icon">#2c3e50</color>
+    <color name="btn_top_fab_buttons_bg">#FFFFFF</color>
+    <color name="btn_top_fab_buttons_icon">#2c3e50</color>
+    <color name="status_unchecked_bg_color">#f5f6fa</color>
+    <color name="status_unchecked_text_color">#2c3e50</color>
 </resources>

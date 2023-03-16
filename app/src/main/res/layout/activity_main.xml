@@ -62,12 +62,12 @@
             android:layout_marginEnd="16dp"
             android:contentDescription="@string/desc_notifications"
             android:src="@drawable/ic_notifications_black_24"
-            app:backgroundTint="@color/white"
+            app:backgroundTint="@color/btn_top_fab_buttons_bg"
             app:elevation="3dp"
             app:fabSize="mini"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/midnight_black" />
+            app:tint="@color/btn_top_fab_buttons_icon" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_nav_drawer"
@@ -77,12 +77,12 @@
             android:layout_marginTop="20dp"
             android:contentDescription="@string/desc_navigation_drawer"
             android:src="@drawable/ic_nav_drawer_black_24"
-            app:backgroundTint="@color/white"
+            app:backgroundTint="@color/btn_top_fab_buttons_bg"
             app:elevation="3dp"
             app:fabSize="mini"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/midnight_black" />
+            app:tint="@color/btn_top_fab_buttons_icon" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_boost"
@@ -127,7 +127,7 @@
             android:layout_marginEnd="16dp"
             android:contentDescription="@string/desc_zoom_in"
             android:src="@drawable/ic_zoom_in_black_24"
-            app:backgroundTint="@color/white_85"
+            app:backgroundTint="@color/btn_right_side_button_bg"
             app:elevation="0dp"
             app:fabSize="mini"
             app:layout_constraintBottom_toTopOf="@id/btn_zoom_out"
@@ -135,7 +135,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias=".7"
             app:layout_constraintVertical_chainStyle="packed"
-            app:tint="@color/midnight_black" />
+            app:tint="@color/btn_right_side_button_icon" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_zoom_out"
@@ -144,13 +144,13 @@
             android:layout_marginTop="10dp"
             android:contentDescription="@string/desc_zoom_out"
             android:src="@drawable/ic_zoom_out_black_24"
-            app:backgroundTint="@color/white_85"
+            app:backgroundTint="@color/btn_right_side_button_bg"
             app:elevation="0dp"
             app:fabSize="mini"
             app:layout_constraintBottom_toTopOf="@id/btn_track_location"
             app:layout_constraintEnd_toEndOf="@+id/btn_zoom_in"
             app:layout_constraintTop_toBottomOf="@id/btn_zoom_in"
-            app:tint="@color/midnight_black" />
+            app:tint="@color/btn_right_side_button_icon" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_track_location"
@@ -159,13 +159,13 @@
             android:layout_marginTop="20dp"
             android:contentDescription="@string/desc_current_location"
             android:src="@drawable/ic_current_location_black_24"
-            app:backgroundTint="@color/white_85"
+            app:backgroundTint="@color/btn_right_side_button_bg"
             app:elevation="0dp"
             app:fabSize="mini"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/btn_zoom_in"
             app:layout_constraintTop_toBottomOf="@+id/btn_zoom_out"
-            app:tint="@color/midnight_black" />
+            app:tint="@color/btn_right_side_button_icon" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_orders"

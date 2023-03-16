@@ -20,8 +20,9 @@ class StatusButtonToggleGroup @JvmOverloads constructor(
     private val checkedBusyColor = ContextCompat.getColor(context, R.color.valencia_red)
     private val checkedBusyTextColor = ContextCompat.getColor(context, R.color.lynx_white)
 
-    private val uncheckedColor = ContextCompat.getColor(context, R.color.lynx_white)
-    private val uncheckedTextColor = ContextCompat.getColor(context, R.color.midnight_black)
+    private val uncheckedColor = ContextCompat.getColor(context, R.color.status_unchecked_bg_color)
+    private val uncheckedTextColor =
+        ContextCompat.getColor(context, R.color.status_unchecked_text_color)
 
     override fun onFinishInflate() {
         super.onFinishInflate()
