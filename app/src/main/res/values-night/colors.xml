@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="address_text_bg_color">#273c75</color>
+    <color name="btn_boost_bg_color">#273c75</color>
+    <color name="btn_live_location_bg_color">#273c75</color>
+    <color name="btn_main_label_color">#f5f6fa</color>
+</resources>

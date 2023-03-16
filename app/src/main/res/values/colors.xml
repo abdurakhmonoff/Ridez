@@ -13,7 +13,14 @@
     <color name="turbo_yellow">#f9ca24</color>
     <color name="aqua_green">#01a3a4</color>
     <color name="lynx_white">#f5f6fa</color>
+    <color name="lynx_white_70">#B3F5F6FA</color>
     <color name="valencia_red">#d63031</color>
     <color name="exodus_blue">#686de0</color>
     <color name="quince_orange">#f0932b</color>
+    <color name="mazarine_blue">#273c75</color>
+
+    <color name="address_text_bg_color">#B3F5F6FA</color>
+    <color name="btn_boost_bg_color">#ffffff</color>
+    <color name="btn_live_location_bg_color">#ffffff</color>
+    <color name="btn_main_label_color">#2c3e50</color>
 </resources>

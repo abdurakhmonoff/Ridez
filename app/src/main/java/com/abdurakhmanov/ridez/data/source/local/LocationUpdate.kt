@@ -1,4 +1,4 @@
-package com.abdurakhmanov.ridez.data.local
+package com.abdurakhmanov.ridez.data.source.local
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

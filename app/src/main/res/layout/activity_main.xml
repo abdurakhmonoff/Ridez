@@ -8,13 +8,10 @@
     android:clipToPadding="false"
     tools:context=".ui.MainActivity">
 
-    <com.mapbox.maps.MapView xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    <com.mapbox.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        mapbox:mapbox_cameraTargetLat="41.31119"
-        mapbox:mapbox_cameraTargetLng="69.27957"
-        mapbox:mapbox_cameraZoom="15.0" />
+        android:layout_height="match_parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -94,21 +91,40 @@
             android:layout_marginStart="16dp"
             android:contentDescription="@string/button_boost"
             android:src="@drawable/ic_boost_black_24"
-            app:backgroundTint="@color/white"
+            app:backgroundTint="@color/btn_boost_bg_color"
             app:elevation="3dp"
             app:fabSize="mini"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias=".55"
+            app:layout_constraintVertical_chainStyle="packed"
             app:tint="@color/exodus_blue" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/btn_live_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:contentDescription="@string/btn_start"
+            android:fontFamily="@font/lexend_medium"
+            android:text="@string/btn_start"
+            android:textAllCaps="false"
+            android:textColor="#ff7675"
+            app:backgroundTint="@color/btn_live_location_bg_color"
+            app:elevation="3dp"
+            app:extendStrategy="wrap_content"
+            app:icon="@drawable/ic_live_location_black_24"
+            app:iconTint="#ff7675"
+            app:layout_constraintBottom_toTopOf="@+id/btn_orders"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_boost" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_zoom_in"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="10dp"
             android:contentDescription="@string/desc_zoom_in"
             android:src="@drawable/ic_zoom_in_black_24"
             app:backgroundTint="@color/white_85"
@@ -125,18 +141,19 @@
             android:id="@+id/btn_zoom_out"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:contentDescription="@string/desc_zoom_out"
             android:src="@drawable/ic_zoom_out_black_24"
             app:backgroundTint="@color/white_85"
             app:elevation="0dp"
             app:fabSize="mini"
-            app:layout_constraintBottom_toTopOf="@id/btn_current_location"
+            app:layout_constraintBottom_toTopOf="@id/btn_track_location"
             app:layout_constraintEnd_toEndOf="@+id/btn_zoom_in"
             app:layout_constraintTop_toBottomOf="@id/btn_zoom_in"
             app:tint="@color/midnight_black" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btn_current_location"
+            android:id="@+id/btn_track_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -188,7 +205,7 @@
             android:layout_marginTop="5dp"
             android:fontFamily="@font/lexend_medium"
             android:text="@string/button_orders"
-            android:textColor="@color/midnight_black"
+            android:textColor="@color/btn_main_label_color"
             app:layout_constraintEnd_toEndOf="@+id/btn_orders"
             app:layout_constraintStart_toStartOf="@+id/btn_orders"
             app:layout_constraintTop_toBottomOf="@+id/btn_orders" />
@@ -201,7 +218,7 @@
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/lexend_medium"
             android:text="@string/button_curb"
-            android:textColor="@color/midnight_black"
+            android:textColor="@color/btn_main_label_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/btn_curb"
             app:layout_constraintStart_toStartOf="@+id/btn_curb" />
@@ -213,9 +230,26 @@
             android:layout_marginTop="5dp"
             android:fontFamily="@font/lexend_medium"
             android:text="@string/button_tariffs"
-            android:textColor="@color/midnight_black"
+            android:textColor="@color/btn_main_label_color"
             app:layout_constraintEnd_toEndOf="@+id/btn_tariffs"
             app:layout_constraintStart_toStartOf="@+id/btn_tariffs"
             app:layout_constraintTop_toBottomOf="@+id/btn_tariffs" />
+
+        <TextView
+            android:id="@+id/current_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/current_address_text_bg"
+            android:fontFamily="@font/lexend"
+            android:gravity="center"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="3dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_group_taxi_availability"
+            tools:text="Улица Mustaqillik" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

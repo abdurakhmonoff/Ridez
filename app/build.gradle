@@ -76,6 +76,14 @@ dependencies {
     kapt "androidx.room:room-compiler:2.5.0"
     implementation("androidx.room:room-ktx:2.5.0")
 
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+
+    // Moshi
+    implementation "com.squareup.moshi:moshi:1.14.0"
+    implementation "com.squareup.moshi:moshi-kotlin:1.12.0"
+
     // Mapbox Maps SDK
     implementation 'com.mapbox.maps:android:10.11.1'
 }

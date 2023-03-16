@@ -1,8 +1,8 @@
 package com.abdurakhmanov.ridez.di
 
 import android.content.Context
-import com.abdurakhmanov.ridez.data.local.AppDatabase
-import com.abdurakhmanov.ridez.data.local.LocationUpdateDao
+import com.abdurakhmanov.ridez.data.source.local.AppDatabase
+import com.abdurakhmanov.ridez.data.source.local.LocationUpdateDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,6 +20,7 @@ object DatabaseModule {
         return AppDatabase.getInstance(context)
     }
 
+    @Singleton
     @Provides
     fun provideLocationUpdateDao(appDatabase: AppDatabase): LocationUpdateDao {
         return appDatabase.locationUpdateDao()

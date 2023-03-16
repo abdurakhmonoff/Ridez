@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Ridez</string>
     <string name="mapbox_access_token" tools:ignore="Typos">pk.eyJ1IjoiYWJkdXJha2htYW5vdiIsImEiOiJjbGV3cW85ZWkwamIyNDRvNHdxeDZzdjE0In0.EvrsaMrce_jRYbZMzsQcPg</string>
+    <string name="channel_name_location_updates">Обновления местоположения</string>
     <string name="button_orders">Заказы</string>
     <string name="button_curb">Бордюр</string>
     <string name="button_tariffs">Тарифы</string>
@@ -12,4 +13,5 @@
     <string name="desc_zoom_out">Уменьшить масштаб</string>
     <string name="desc_zoom_in">Увеличить масштаб</string>
     <string name="button_boost">Boost</string>
+    <string name="btn_start">Старт</string>
 </resources>
