@@ -83,6 +83,7 @@ dependencies {
     // Moshi
     implementation "com.squareup.moshi:moshi:1.14.0"
     implementation "com.squareup.moshi:moshi-kotlin:1.12.0"
+    kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.14.0'
 
     // Mapbox Maps SDK
     implementation 'com.mapbox.maps:android:10.11.1'
