@@ -37,6 +37,7 @@ import com.mapbox.maps.plugin.locationcomponent.*
 import com.mapbox.maps.plugin.logo.logo
 import com.mapbox.maps.plugin.scalebar.scalebar
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -198,6 +199,7 @@ class MainActivity : AppCompatActivity(), OnRequestPermissionsResultCallback {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.liveLocation.collect { location ->
                     location?.let {
+                        delay(5000)
                         viewModel.getCurrentAddress(
                             GEOCODER_API_KEY,
                             location.latitude,
@@ -205,10 +207,14 @@ class MainActivity : AppCompatActivity(), OnRequestPermissionsResultCallback {
                         )
                     }
                 }
+            }
+        }
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.currentAddress.collect { currentAddress ->
-                    if (currentAddress != null) {
+                    if (currentAddress.isNotBlank()) {
                         binding.currentAddress.visibility = View.VISIBLE
-                        binding.currentAddress.text = currentAddress.postaladdress
+                        binding.currentAddress.text = currentAddress
                     } else {
                         binding.currentAddress.visibility = View.INVISIBLE
                     }

@@ -3,7 +3,6 @@ package com.abdurakhmanov.ridez.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.abdurakhmanov.ridez.data.repository.LocationRepository
-import com.abdurakhmanov.ridez.data.response.CurrentAddress
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -30,8 +29,8 @@ class MainViewModel @Inject constructor(
     /**
      * Geocoded address response
      */
-    private val _currentAddress = MutableStateFlow<CurrentAddress?>(null)
-    val currentAddress: StateFlow<CurrentAddress?>
+    private val _currentAddress = MutableStateFlow("")
+    val currentAddress: StateFlow<String>
         get() = _currentAddress
 
     init {
@@ -51,8 +50,9 @@ class MainViewModel @Inject constructor(
     suspend fun getCurrentAddress(apiKey: String, latitude: Double, longitude: Double) {
         val request = locationRepository.getAddress(apiKey, latitude, longitude)
         if (request.isSuccessful) {
-            if (request.body() != null && request.code() == 200) {
-                _currentAddress.value = request.body()
+            val requestBody = request.body()
+            if (requestBody != null && request.code() == 200) {
+                _currentAddress.value = requestBody.postaladdress
             }
         }
     }
