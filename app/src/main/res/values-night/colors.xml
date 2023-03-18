@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="address_text_bg_color">#2C3A47</color>
-    <color name="btn_boost_bg_color">#2C3A47</color>
-    <color name="btn_live_location_bg_color">#2C3A47</color>
+    <color name="address_text_bg_color">#ced6e0</color>
+    <color name="btn_boost_bg_color">#ced6e0</color>
+    <color name="btn_live_location_bg_color">#ced6e0</color>
     <color name="btn_main_label_color">#f5f6fa</color>
-    <color name="btn_right_side_button_bg">#2C3A47</color>
-    <color name="btn_right_side_button_icon">#f5f6fa</color>
-    <color name="btn_top_fab_buttons_bg">#2C3A47</color>
-    <color name="btn_top_fab_buttons_icon">#f5f6fa</color>
-    <color name="status_unchecked_bg_color">#2c3e50</color>
-    <color name="status_unchecked_text_color">#f5f6fa</color>
+    <color name="btn_right_side_button_bg">#B3CED6E0</color>
+    <color name="btn_right_side_button_icon">#2c3e50</color>
+    <color name="btn_top_fab_buttons_bg">#ced6e0</color>
+    <color name="btn_top_fab_buttons_icon">#2c3e50</color>
+    <color name="status_unchecked_bg_color">#ced6e0</color>
+    <color name="status_unchecked_text_color">#2c3e50</color>
 </resources>

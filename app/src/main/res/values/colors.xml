@@ -10,6 +10,7 @@
 
     <color name="white_85">#D9FFFFFF</color>
     <color name="midnight_black">#2c3e50</color>
+    <color name="asp_black">#34495e</color>
     <color name="turbo_yellow">#f9ca24</color>
     <color name="aqua_green">#01a3a4</color>
     <color name="lynx_white">#f5f6fa</color>
@@ -18,6 +19,8 @@
     <color name="exodus_blue">#686de0</color>
     <color name="quince_orange">#f0932b</color>
     <color name="mazarine_blue">#273c75</color>
+    <color name="twinkle_grey">#ced6e0</color>
+    <color name="silver_grey">#bdc3c7</color>
 
     <color name="address_text_bg_color">#B3F5F6FA</color>
     <color name="btn_boost_bg_color">#ffffff</color>

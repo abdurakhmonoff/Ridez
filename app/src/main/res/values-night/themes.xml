@@ -6,8 +6,8 @@
         <item name="colorPrimaryVariant">@color/turbo_yellow</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/mazarine_blue</item>
-        <item name="colorSecondaryVariant">@color/mazarine_blue</item>
+        <item name="colorSecondary">@color/asp_black</item>
+        <item name="colorSecondaryVariant">@color/turbo_yellow</item>
         <item name="colorOnSecondary">@color/turbo_yellow</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/black</item>
