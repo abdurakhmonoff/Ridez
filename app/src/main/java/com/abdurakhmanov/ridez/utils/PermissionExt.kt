@@ -4,13 +4,11 @@ import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.location.LocationManager
 import android.net.Uri
 import android.os.Build
 import android.provider.Settings
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
-import androidx.core.location.LocationManagerCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 /**
@@ -54,16 +52,6 @@ fun String.isPermissionGranted(
         }
     }
     return false
-}
-
-/**
- * Checks whether user enabled the location or not.
- *
- * @return true if location is enabled or false if location is disabled
- */
-fun Context.isLocationEnabled(): Boolean {
-    val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
-    return LocationManagerCompat.isLocationEnabled(locationManager)
 }
 
 /**

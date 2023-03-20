@@ -5,6 +5,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.content.res.Configuration
+import android.location.Address
+import android.location.Geocoder
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
@@ -37,8 +39,9 @@ import com.mapbox.maps.plugin.locationcomponent.*
 import com.mapbox.maps.plugin.logo.logo
 import com.mapbox.maps.plugin.scalebar.scalebar
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.util.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), OnRequestPermissionsResultCallback {
@@ -195,28 +198,24 @@ class MainActivity : AppCompatActivity(), OnRequestPermissionsResultCallback {
     }
 
     private fun showCurrentAddress() {
+        val geocoder = Geocoder(applicationContext, Locale("uz_UZ"))
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.liveLocation.collect { location ->
                     location?.let {
-                        delay(5000)
-                        viewModel.getCurrentAddress(
-                            GEOCODER_API_KEY,
+                        geocoder.getAddress(
                             location.latitude,
                             location.longitude
-                        )
-                    }
-                }
-            }
-        }
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.currentAddress.collect { currentAddress ->
-                    if (currentAddress.isNotBlank()) {
-                        binding.currentAddress.visibility = View.VISIBLE
-                        binding.currentAddress.text = currentAddress
-                    } else {
-                        binding.currentAddress.visibility = View.INVISIBLE
+                        ) { address: Address? ->
+                            lifecycleScope.launch(Dispatchers.Main) {
+                                if (address != null) {
+                                    binding.currentAddress.visibility = View.VISIBLE
+                                    binding.currentAddress.text = address.getAddressLine(0)
+                                } else {
+                                    binding.currentAddress.visibility = View.INVISIBLE
+                                }
+                            }
+                        }
                     }
                 }
             }
